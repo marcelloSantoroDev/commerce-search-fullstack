@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import AppContext from '../context/AppContext';
 
 function InputComp() {
-   const [searched, UseSearched] = useState('');
+  const { searched, setSearched } = useContext(AppContext);
 
   const handleChange = ({ target }) => {
     const { value } = target;
-    UseSearched(value)
+    setSearched(value)
   }
+
   return (
     <Box
       component="form"
@@ -25,7 +27,7 @@ function InputComp() {
           multiline
           maxRows={4}
           onChange={handleChange}
-          value={searched}
+          value={ searched }
         />
         </div>
      </Box>   
