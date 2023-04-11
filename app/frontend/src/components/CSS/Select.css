@@ -1,4 +1,11 @@
-.select-form {
+/* .select-form {
     width: 150px;
     display: flex;
+} */
+
+.select {
+    height: 54px;
+    margin-top: 17px;
+    margin-right: 10px;
+    margin-left: 5px;
 }
