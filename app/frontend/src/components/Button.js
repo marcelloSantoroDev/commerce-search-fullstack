@@ -2,15 +2,21 @@ import React, { useContext } from 'react'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import AppContext from '../context/AppContext';
-import meliApi from '../Utils/meliApi';
+import meliApi from '../utils/meliApi';
 
 function ButtonComp(props) {
   const { type } = props;
-  const { category, setApiData } = useContext(AppContext);
+  const { category, setApiData, searched, setSearched } = useContext(AppContext);
 
   const handleClick = async () => {
-    const data = await meliApi(category);
-    setApiData(data)
+    if (searched.length === 0) {
+      const data = await meliApi(category);
+      setApiData(data);
+    } else {
+      const data = await meliApi(searched);
+      setApiData(data);
+      setSearched('');      
+    }
   }
 
   return (

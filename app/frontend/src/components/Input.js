@@ -26,7 +26,7 @@ function InputComp() {
           label="Search"
           multiline
           maxRows={4}
-          onChange={handleChange}
+          onChange={ handleChange }
           value={ searched }
         />
         </div>

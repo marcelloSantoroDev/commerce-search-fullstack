@@ -23,7 +23,7 @@ function SelectComp(props) {
         <option value="">Web</option>
         <option value="Todas">Todas</option>
         <option value="MecadoLivre">MercadoLivre</option>
-        <option value="Celular">Celular</option>
+        <option value="Celular">Buscapé</option>
         </>
           :
         <>

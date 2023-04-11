@@ -1,0 +1,29 @@
+.card {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 10px;
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.product-button {
+    margin-left: 10px;
+    align-self: center;
+}
+
+.product-link-button{
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.product-button > button:hover {
+  background-color: #0069d9;
+}
