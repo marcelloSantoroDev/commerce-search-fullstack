@@ -1,8 +1,12 @@
 import React from 'react'
+import SelectComp from '../components/Select'
 
 function Home() {
   return (
-    <div>Home</div>
+    <section className='home-section'>
+        <SelectComp type="Web" />
+        <SelectComp type="Categories" />
+    </section>
   )
 }
 
