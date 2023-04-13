@@ -1,5 +1,5 @@
 import app from "./app";
-// import scraper from "./utils/scraper";
+import scraper from "./utils/scraper";
 const PORT = 3001;
 
 const server = app.listen(PORT, () => console.log(
@@ -11,8 +11,10 @@ const TVUrl = 'https://www.buscape.com.br/tv'
 const mobileUrl = 'https://www.buscape.com.br/celular'
 
 app.get('/api/buscape/celular', async (_req, res) => {
-    // const data = await scraper();
-    // return res.status(200).json(data)
+    await scraper(mobileUrl);
+    const data = await fetch('./api.json')
+
+    return res.status(200).json(data)
 });
 
 // app.get('/api/buscape/geladeira', (_req, res) => {
