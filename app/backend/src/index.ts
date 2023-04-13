@@ -12,7 +12,7 @@ const TVUrl = 'https://www.buscape.com.br/tv'
 const mobileUrl = 'https://www.buscape.com.br/celular'
 
 app.get('/api/buscape/celular', async (_req, res) => {
-    const data = await scraper(mobileUrl);
+    const data = await scraper();
     return res.status(200).json(data)
 });
 
