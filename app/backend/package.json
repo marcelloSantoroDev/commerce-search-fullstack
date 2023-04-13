@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch \" ./src/**\"  --ignore \"src/**/*.json\" --exec \"ts-node src/index.ts\"",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/utils/scraper.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "fs": "^0.0.1-security",
     "mysql2": "^2.1.0",
     "pretty": "^2.0.0",
+    "puppeteer": "^19.9.0",
     "sequelize": "^6.3.4"
   },
   "devDependencies": {
