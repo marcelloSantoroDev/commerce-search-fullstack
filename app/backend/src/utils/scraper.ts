@@ -40,11 +40,11 @@ const scraper = async (url: string) => {
 
   let file;
   if (url === 'https://www.buscape.com.br/geladeira') {
-    file = 'fridge.json';
+    file = 'apis/fridge.json';
   } else if (url === 'https://www.buscape.com.br/tv') {
-    file = 'tv.json';
+    file = 'apis/tv.json';
   } else if (url === 'https://www.buscape.com.br/celular') {
-    file = 'mobile.json';
+    file = 'apis/mobile.json';
   }
 
   if (file) {
