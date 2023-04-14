@@ -13,7 +13,7 @@ function SelectComp(props) {
 
   return (
       <select
-      value={ api || category }
+      value={ type === 'Web' ? api : category }
       onChange={ handleChange }
       className='select'
       >
@@ -23,14 +23,14 @@ function SelectComp(props) {
         <option value="">Web</option>
         <option value="Todas">Todas</option>
         <option value="MecadoLivre">MercadoLivre</option>
-        <option value="Celular">Buscapé</option>
+        <option value="Buscape">Buscapé</option>
         </>
           :
         <>
         <option value="">Categories</option>
-        <option value="Geladeira">Geladeira</option>
-        <option value="TV">TV</option>
-        <option value="Celular">Celular</option>
+        <option value="geladeira">Geladeira</option>
+        <option value="tv">TV</option>
+        <option value="celular">Celular</option>
         </>
         }
       </select>

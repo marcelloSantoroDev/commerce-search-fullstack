@@ -3,12 +3,13 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import AppContext from '../context/AppContext';
 import meliApi from '../utils/meliApi';
+import buscapeApi from '../utils/buscapeApi';
 
 function ButtonComp(props) {
   const { type } = props;
-  const { category, setApiData, searched, setSearched } = useContext(AppContext);
+  const { category, api, setApiData, searched, setSearched } = useContext(AppContext);
 
-  const handleClick = async () => {
+  const handleMeliClick = async () => {
     if (searched.length === 0) {
       const data = await meliApi(category);
       setApiData(data);
@@ -19,9 +20,20 @@ function ButtonComp(props) {
     }
   }
 
+    const handleBuscapeClick = async () => {
+    if (searched.length === 0) {
+      const data = await buscapeApi(category);
+      setApiData(data);
+    } else {
+      const data = await buscapeApi(searched);
+      setApiData(data);
+      setSearched('');
+    }
+  }
+
   return (
      <Stack spacing={2} direction="row" alignSelf={'center'} minHeight={55.4}>
-      <Button variant="contained" onClick={ handleClick }>{ type }</Button>
+      <Button variant="contained" onClick={ api === 'Buscape' ? handleBuscapeClick : handleMeliClick }>{ type }</Button>
       </Stack>
   )
 }

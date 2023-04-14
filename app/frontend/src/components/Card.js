@@ -4,12 +4,12 @@ import './CSS/Card.css'
 // need to add description and category to the card
 
 function Card(props) {
-  const { product: { id, thumbnail, title, original_price, permalink } } = props;
+  const { product: { thumbnail, title, original_price, permalink } } = props;
 
   return (
     <div className="card">
       <section className="photo">
-        <img  src={ thumbnail } alt={title + id} width="180px"/>
+        <img  src={ thumbnail } alt={title} width="180px"/>
       </section>
       <section className="title-descrip-price">
         <div className="title" >
