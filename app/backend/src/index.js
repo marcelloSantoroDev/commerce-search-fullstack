@@ -52,5 +52,4 @@ app.get('/api/buscape/tv', async (_req, res) => {
     });
 });
 
-
 module.exports = server;
