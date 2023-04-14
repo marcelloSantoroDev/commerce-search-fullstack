@@ -16,7 +16,7 @@ const server = app.listen(PORT, async () => {
 
 
 
-const __dirname = '/home/marcello-sonoro/GITHUB/desafios-tecnicos/lexart-fullstack/lexart-fullstack-test/app/backend/'
+const __dirname = '/home/marcello-sonoro/GITHUB/desafios-tecnicos/lexart-fullstack/lexart-fullstack-test/app/backend/apis/'
 
 
 app.get('/api/buscape/celular', async (_req, res) => {
