@@ -1,7 +1,7 @@
-import app from "./app";
-import fs from "fs";
-import path from "path";
-import scraper from "./utils/scraper";
+const app = require('./app');
+const fs = require('fs');
+const path = require('path');
+const scraper = require('./utils/scraper');
 
 const PORT = 3001;
 
@@ -16,11 +16,11 @@ const server = app.listen(PORT, async () => {
 
 
 
-const __dirname = '/home/marcello-sonoro/GITHUB/desafios-tecnicos/lexart-fullstack/lexart-fullstack-test/app/backend/apis/'
+const dirname = '/home/marcello-sonoro/GITHUB/desafios-tecnicos/lexart-fullstack/lexart-fullstack-test/app/backend/apis/'
 
 
 app.get('/api/buscape/celular', async (_req, res) => {
-   const filePath = path.join(__dirname, 'mobile.json');
+   const filePath = path.join(dirname, 'mobile.json');
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
@@ -52,4 +52,5 @@ app.get('/api/buscape/tv', async (_req, res) => {
     });
 });
 
-export default server;
+
+module.exports = server;

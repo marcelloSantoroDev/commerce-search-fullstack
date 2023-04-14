@@ -57,7 +57,10 @@ services:
       - 3306:3306
       - 33060:33060
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_DB_NAME=lexart-db
+      - DB_HOST=localhost
 
 # Lista de redes que os containeres irão utilizar
 networks:
