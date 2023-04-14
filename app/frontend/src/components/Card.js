@@ -27,7 +27,7 @@ function Card(props) {
         </div>
       </section>
       <section className="product-button">
-          <a  href={ permalink } className="product-link-button">
+          <a  href={ permalink } target='_blank' rel='noreferrer' className="product-link-button">
             Ir à Web
           </a>
       </section>
