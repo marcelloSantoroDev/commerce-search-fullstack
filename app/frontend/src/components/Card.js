@@ -4,7 +4,7 @@ import './CSS/Card.css'
 // need to add description and category to the card
 
 function Card(props) {
-  const { product: { thumbnail, title, original_price, permalink } } = props;
+  const { product: { thumbnail, title, original_price, permalink }, api } = props;
 
   return (
     <div className="card">
@@ -28,7 +28,7 @@ function Card(props) {
       </section>
       <section className="product-button">
           <a  href={ permalink } target='_blank' rel='noreferrer' className="product-link-button">
-            Ir à Web
+            { `Acessar ${api}` }
           </a>
       </section>
     </div>

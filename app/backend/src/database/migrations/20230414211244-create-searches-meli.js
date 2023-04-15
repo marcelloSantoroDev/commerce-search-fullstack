@@ -6,6 +6,10 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
+      website: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       thumbnail: {
         type: Sequelize.STRING,
         allowNull: false,

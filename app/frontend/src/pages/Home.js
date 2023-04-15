@@ -7,7 +7,7 @@ import AppContext from '../context/AppContext'
 import Card from '../components/Card'
 
 function Home() {
-  const { apiData } = useContext(AppContext);
+  const { apiData, api } = useContext(AppContext);
   const { results } = apiData;
 
   return (
@@ -23,7 +23,7 @@ function Home() {
         <section className='render-section'>
           {
             results?.map((product) => (
-              <Card product={ product } />
+              <Card product={ product } api={ api === 'Buscape' ? 'Buscapé' : 'Meli' } />
             ))
           }
         </section>

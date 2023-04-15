@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 
-const saveOnDb = async (apiData) => {
+const saveOnDb = async (apiData, website) => {
     const { results: { thumbnail, title, original_price, permalink } } = apiData;
 
-    const responseObj = { thumbnail, title, original_price, permalink }
+    const responseObj = { website, thumbnail, title, original_price, permalink }
   try {
-    const response = await axios.post('http://localhost:3000/db/search', responseObj);
+    const response = await axios.post('http://localhost:3000/db/searches', responseObj);
     return response;
   } catch (error) {
     console.error(error);
