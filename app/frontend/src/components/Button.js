@@ -14,12 +14,13 @@ function ButtonComp(props) {
     if (searched.length === 0) {
       const data = await meliApi(category);
       setApiData(data);
-      await Promise.all(data.forEach((card) => saveOnDb(data, 'meli')))
+      console.log(data.results);
+      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
     } else {
       const data = await meliApi(searched);
       setApiData(data);
       setSearched('');      
-      await Promise.all(data.forEach((card) => saveOnDb(data, 'meli')))
+      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
     }
   }
 
@@ -31,12 +32,12 @@ function ButtonComp(props) {
     if (searched.length === 0) {
       const data = await buscapeApi(category);
       setApiData(data);
-      await Promise.all(data.forEach((card) => saveOnDb(card, 'buscape')))
+      await Promise.all(data.results.map((card) => saveOnDb(card, 'buscape')))
     } else {
       const data = await buscapeApi(searched);
       setApiData(data);
       setSearched('');
-      await Promise.all(data.forEach((card) => saveOnDb(card, 'buscape')))
+      await Promise.all(data.results.map((card) => saveOnDb(card, 'buscape')))
     }
   }
 

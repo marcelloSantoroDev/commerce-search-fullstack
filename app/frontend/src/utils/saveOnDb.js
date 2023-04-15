@@ -14,7 +14,7 @@
 // };
 
 const saveOnDb = async (apiData, website) => {
-  const { results: { thumbnail, title, original_price, permalink } } = apiData;
+  const { thumbnail, title, original_price, permalink } = apiData;
   const responseObj = { website, thumbnail, title, original_price, permalink };
 
   try {
