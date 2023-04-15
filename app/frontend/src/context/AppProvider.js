@@ -6,6 +6,7 @@ function AppProvider ({ children }){
     const [category, setCategory] = useState('');
     const [searched, setSearched] = useState('');
     const [apiData, setApiData] = useState([]);
+    const [saved, setSaved] = useState([]);
 
 
     const values = useMemo(() => ({
@@ -16,8 +17,10 @@ function AppProvider ({ children }){
         searched,
         setSearched,
         apiData,
-        setApiData
-    }), [api, category, searched, apiData]);
+        setApiData,
+        saved,
+        setSaved
+    }), [api, category, searched, apiData, saved]);
 
     return (
         <AppContext.Provider value={ values }>

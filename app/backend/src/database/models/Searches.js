@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         title: DataTypes.STRING,
         original_price: DataTypes.STRING,
         permalink: DataTypes.STRING,
+        category: DataTypes.STRING,
     },
     {
         timestamps: false

@@ -15,12 +15,12 @@ function ButtonComp(props) {
       const data = await meliApi(category);
       setApiData(data);
       console.log(data.results);
-      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
+      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli', category)));
     } else {
       const data = await meliApi(searched);
       setApiData(data);
       setSearched('');      
-      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
+      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli', category)));
     }
   }
 
