@@ -31,7 +31,7 @@ app.get('/api/buscape/celular', async (_req, res) => {
 });
 
 app.get('/api/buscape/geladeira', async (_req, res) => {
-    const filePath = path.join(__dirname, 'fridge.json');
+    const filePath = path.join(dirname, 'fridge.json');
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
@@ -42,7 +42,7 @@ app.get('/api/buscape/geladeira', async (_req, res) => {
 });
 
 app.get('/api/buscape/tv', async (_req, res) => {
-    const filePath = path.join(__dirname, 'tv.json');
+    const filePath = path.join(dirname, 'tv.json');
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error(err);

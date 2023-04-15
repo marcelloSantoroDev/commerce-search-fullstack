@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import AppContext from '../context/AppContext';
 import meliApi from '../utils/meliApi';
 import buscapeApi from '../utils/buscapeApi';
-import saveOnDb from '../utils/handleApiDataForDb';
+// import saveOnDb from '../utils/handleApiDataForDb';
 
 function ButtonComp(props) {
   const { type } = props;
@@ -14,12 +14,12 @@ function ButtonComp(props) {
     if (searched.length === 0) {
       const data = await meliApi(category);
       setApiData(data);
-      saveOnDb(data);
+      // saveOnDb(data);
     } else {
       const data = await meliApi(searched);
       setApiData(data);
       setSearched('');      
-      saveOnDb(data);
+      // saveOnDb(data);
     }
   }
 
