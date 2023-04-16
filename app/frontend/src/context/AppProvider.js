@@ -6,7 +6,10 @@ function AppProvider ({ children }){
     const [category, setCategory] = useState('');
     const [searched, setSearched] = useState('');
     const [apiData, setApiData] = useState([]);
-    const [saved, setSaved] = useState([]);
+    const [saved, setSaved] = useState({
+        website: [],
+        product: [],
+    });
 
 
     const values = useMemo(() => ({

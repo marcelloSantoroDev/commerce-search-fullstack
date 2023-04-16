@@ -2,11 +2,11 @@ const { searches } = require('../database/models')
 const { verifyOnDb } = require('./validations');
 
 const createSearch = async (data) => {
-    const { category } = data;
-    const { type, message } = await verifyOnDb(category);
+    const { category, website } = data;
+    const { type } = await verifyOnDb({ category, website });
 
     if (type) {
-        return { type: 'found on db', message }
+        return { type: 'found on db', message: 'found on db' };
     }
 
     try {
@@ -17,6 +17,18 @@ const createSearch = async (data) => {
     }
 }
 
+const getSearches = async (data) => {
+    const { category, website } = data;
+    const { type, message } = await verifyOnDb({ category, website });
+
+    if (type) {
+        return { type: 'found on db', message }
+    }
+
+    return { type: null, message: '' }
+}
+
 module.exports = {
-    createSearch
+    createSearch,
+    getSearches,
 }
