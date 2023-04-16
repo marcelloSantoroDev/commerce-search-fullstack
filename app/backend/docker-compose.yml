@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 version: "3"
 
 services:
@@ -58,6 +62,7 @@ services:
       - DB_PASSWORD=password
       - DB_DB_NAME=lexart-db
       - DB_HOST=localhost
+      - MYSQL_PASSWORD=password
 
 # Lista de redes que os containeres irão utilizar
 networks:
