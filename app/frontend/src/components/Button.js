@@ -9,55 +9,69 @@ import saveOnDb from '../utils/saveOnDb';
 
 function ButtonComp(props) {
   const { type } = props;
-  const { category, api, setApiData, searched, setSearched, saved } = useContext(AppContext);
-  const isCategorySaved = saved.product?.some((e) => e === category);
-  const isApiSaved = saved.website?.some((e) => e === api);
-  const isSaved = isCategorySaved && isApiSaved;
+  const { category, api, setApiData, searched, setSearched, saved, setSaved } = useContext(AppContext);
+
+  const handleSavedArr = () => {
+    const isCatSaved = saved.category.some((e) => e === category);
+    const isSiteSaved = saved.website.some((e) => e === api);
+    if (isCatSaved && isSiteSaved) {
+      return true
+    } else {
+      setSaved({
+        ...saved,
+        category: [...saved.category, category],
+        website: [...saved.website, api]
+      })
+      return false
+    }
+  }
 
   const handleMeliClick = async () => {
+    const isSaved = handleSavedArr();
     if (searched.length === 0) {
       if (isSaved) {
-        const data = await dbApi();
+        const data = await dbApi({category, api});
         setApiData(data);
       } else {
         const data = await meliApi(category);
         setApiData(data);
-        await Promise.all(data.results.map((card) => saveOnDb(card, 'meli', category)));
+        saveOnDb(data, 'meli', category);
       }
     } else {
       if (isSaved) {
-        const data = await dbApi();
-        setApiData(data);
+        const data = await dbApi({ category, api });
         setSearched('');
+        setApiData(data);
       } else {
         const data = await meliApi(searched);
-        setApiData(data);
         setSearched('');
-        await Promise.all(data.results.map((card) => saveOnDb(card, 'meli', category)));
+        setApiData(data);
+        await saveOnDb(data, 'meli', category);
       }
     }
   }
 
   const handleBuscapeClick = async () => {
+    const isSaved = handleSavedArr();
     if (searched.length === 0) {
       if (isSaved) {
-        const data = await dbApi();
+        const data = await dbApi({ category, api });
         setApiData(data);
       } else {
         const data = await buscapeApi(category);
         setApiData(data);
-        await Promise.all(data.results.map((card) => saveOnDb(card, 'buscape')))
+        await saveOnDb(data, 'buscape', category)
       }
     } else {
       if (isSaved) {
-        const data = await dbApi();
-        setApiData(data);
+        const data = await dbApi({ category, api });
         setSearched('');
+        setApiData(data);
       } else {
         const data = await buscapeApi(searched);
-        setApiData(data);
         setSearched('');
-        await Promise.all(data.results.map((card) => saveOnDb(card, 'buscape')))
+        setApiData(data);
+        saveOnDb(data, 'buscape', category);
       }
     }
   }

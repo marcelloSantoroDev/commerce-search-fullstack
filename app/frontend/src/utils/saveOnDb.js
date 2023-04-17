@@ -1,21 +1,6 @@
-// import axios from 'axios';
-
-
-// const saveOnDb = async (apiData, website) => {
-//     const { results: { thumbnail, title, original_price, permalink } } = apiData;
-
-//     const responseObj = { website, thumbnail, title, original_price, permalink }
-//   try {
-//     const response = await axios.post('http://localhost:3000/db/searches', responseObj);
-//     return response;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-
-const saveOnDb = async (apiData, website, category) => {
-  const { thumbnail, title, original_price, permalink } = apiData;
-  const responseObj = { website, thumbnail, title, original_price, permalink, category };
+const saveOnDb = async (data, website, category) => {
+  // const { thumbnail, title, original_price, permalink } = apiData;
+  const responseObj = { data, website, category };
 
   try {
     await fetch('http://localhost:3001/db/searches', {

@@ -8,7 +8,7 @@ function AppProvider ({ children }){
     const [apiData, setApiData] = useState([]);
     const [saved, setSaved] = useState({
         website: [],
-        product: [],
+        category: [],
     });
 
 

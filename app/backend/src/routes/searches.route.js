@@ -4,6 +4,6 @@ const router = app.Router();
 const { searchesController } = require('../controllers')
 
 router.post('/searches', searchesController.createSearch);
-router.get('/searches', searchesController.getSearches);
+router.post('/', searchesController.getSearches);
 
 module.exports = router;

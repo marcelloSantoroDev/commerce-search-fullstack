@@ -1,13 +1,24 @@
-import axios from 'axios';
+const dbApi = async ({ category, api }) => {
 
-const dbApi = async (query) => {
-    const url = 'http://localhost:3001/db/searches';
-    try {
-        const response = await axios.get(url);
-        return response.data.message;
-    } catch (error) {
-        throw new Error(error.message);
+    const response = {
+        category,
+        website: api
     }
+
+    try {
+        const data = await fetch('http://localhost:3001/db', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(response)
+        });
+
+        return data;
+    } catch (error) {
+        return `Error: ${error}`
+    }
+
 };
 
 export default dbApi;

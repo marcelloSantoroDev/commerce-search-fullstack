@@ -4,22 +4,14 @@ import AppContext from '../context/AppContext';
 
 function SelectComp(props) {
   const { type } = props;
-  const { api, setApi, category, setCategory, setSaved, saved } = useContext(AppContext);
+  const { api, setApi, category, setCategory } = useContext(AppContext);
 
   const handleChange = ({ target }) => {
     const { value } = target;
     if (type === "Web") {
       setApi(value)
-      setSaved({
-        ...saved,
-        website: [...saved.website, value]
-      })
     } else {
       setCategory(value)
-      setSaved({
-        ...saved,
-        product: [...saved.product, value]
-      });
     }
   }
 
