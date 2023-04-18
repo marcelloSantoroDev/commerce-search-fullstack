@@ -1,11 +1,11 @@
 ## Descrição
 
-Descrição da Aplicação
 A aplicação é capaz de pesquisar por produtos na API do Mercado Livre e exibir os resultados para o usuário. Além disso, também faz scraping do site Buscapé para obter informações adicionais sobre os produtos encontrados.
 
 O backend é construído em Node.js e usa a biblioteca express para criar um servidor web. Ele é responsável por intermediar as requisições do frontend para a API do Mercado Livre e para o scraper do Buscapé. Ele também faz cache das informações obtidas do Buscapé para melhorar o desempenho da aplicação.
 
 O frontend é construído em React e usa a biblioteca axios para fazer as requisições para o backend. Ele apresenta uma interface simples para que o usuário possa inserir a palavra-chave da pesquisa e ver os resultados da pesquisa.
+
 
 
 ## Instruções para subir a aplicação front-end
