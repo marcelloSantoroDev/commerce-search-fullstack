@@ -8,7 +8,7 @@ O frontend é construído em React e usa a biblioteca axios para fazer as requis
 
 ## Instruções para subir a aplicação front-end
 
-1. Abra um terminal na pasta raiz do projeto.
+1. Abra um terminal na pasta /app/frontend do projeto.
 2. Execute o comando `npm install` para instalar as dependências do projeto.
 3. Execute o comando `npm start` para iniciar o servidor de desenvolvimento.
 
@@ -17,9 +17,7 @@ O frontend é construído em React e usa a biblioteca axios para fazer as requis
 
 1. Certifique-se de ter o Docker instalado em sua máquina.
 2. Certifique-se de configurar o arquivo .env.example, bem como retirar o .example
-3. Abra um terminal na pasta raiz do projeto.
+3. Abra um terminal na pasta /app/backend do projeto.
 4. Execute o comando `docker build -t 'DB_NAME definido no .env' .` para construir a imagem para o MySQL.
 5. Execute o `comando docker-compose up -d .` para subir o container do MySQL.
 6. Execute o comando `npm run db` no terminal da sua máquina para criar o banco de dados e a tabela.
-
-

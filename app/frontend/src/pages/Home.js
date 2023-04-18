@@ -8,7 +8,7 @@ import Card from '../components/Card'
 import Loading from '../components/Loading'
 
 function Home() {
-  const { apiData, api, loading } = useContext(AppContext);
+  const { apiData, loading } = useContext(AppContext);
   const { results } = apiData;
 
   return (
@@ -25,7 +25,7 @@ function Home() {
           {
             loading ? <Loading /> :
             results?.map((product) => (
-              <Card product={ product } api={ api === 'Buscape' ? 'Buscapé' : 'Meli' } />
+              <Card product={ product } />
             ))
           }
         </section>
