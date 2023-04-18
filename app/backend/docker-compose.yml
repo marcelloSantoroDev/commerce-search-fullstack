@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   mysql:
-    image: ${DB_DB_NAME}
+    image: ${DB_NAME}
     ports:
       - "3306:3306"
       - "33060:33060"
