@@ -1,9 +1,11 @@
 import axios from 'axios';
 
 const buscapeApi = async (query) => {
-  const url = `http://localhost:3001/api/buscape/${query}`;
+  
+  const url = `http://localhost:3001/api/buscape`;
   try {
-    const response = await axios.get(url);
+    const responseObj = { query };
+    const response = await axios.post(url, responseObj);
     return response.data;
   } catch (error) {
     throw new Error(error.message);
