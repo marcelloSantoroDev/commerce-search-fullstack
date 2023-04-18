@@ -18,6 +18,7 @@ O frontend é construído em React e usa a biblioteca axios para fazer as requis
 1. Certifique-se de ter o Docker instalado em sua máquina.
 2. Certifique-se de configurar o arquivo .env.example, bem como retirar o .example
 3. Abra um terminal na pasta /app/backend do projeto.
-4. Execute o comando `docker build -t 'DB_NAME definido no .env' .` para construir a imagem do MySQL.
-5. Execute o `comando docker-compose up -d` para subir o container do MySQL.
-6. Execute o comando `npm run db` no terminal da sua máquina para criar o banco de dados e a tabela.
+4. Execute o comando `npm install` para instalar as dependências do projeto.
+5. Execute o comando `docker build -t 'DB_NAME definido no .env' .` para construir a imagem do MySQL.
+6. Execute o `comando docker-compose up -d` para subir o container do MySQL.
+7. Execute o comando `npm run db` no terminal da sua máquina para criar o banco de dados e a tabela.
