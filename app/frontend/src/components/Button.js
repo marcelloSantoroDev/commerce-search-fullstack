@@ -8,16 +8,20 @@ import saveOnDb from '../utils/saveOnDb';
 
 function ButtonComp(props) {
   const { type } = props;
-  const { category, api, setApiData, searched, setSearched, apiData } = useContext(AppContext);
+  const { category, api, setApiData, searched, setSearched, apiData, setLoading } = useContext(AppContext);
 
   const handleMeliClick = async () => {
+    setLoading(true)
     if (searched.length === 0) {
       const data = await meliApi(category);
+      setLoading(false)
       setApiData(data);
       console.log(data.results);
       await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
     } else {
+      setLoading(true);
       const data = await meliApi(searched);
+      setLoading(false);
       setApiData(data);
       setSearched('');      
       await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
@@ -30,11 +34,15 @@ function ButtonComp(props) {
 
     const handleBuscapeClick = async () => {
     if (searched.length === 0) {
+      setLoading(true)
       const data = await buscapeApi(category);
+      setLoading(false)
       setApiData(data);
       await Promise.all(data.results.map((card) => saveOnDb(card, 'buscape')))
     } else {
+      setLoading(true)
       const data = await buscapeApi(searched);
+      setLoading(false)
       setApiData(data);
       setSearched('');
       await Promise.all(data.results.map((card) => saveOnDb(card, 'buscape')))

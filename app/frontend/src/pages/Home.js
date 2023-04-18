@@ -5,9 +5,10 @@ import './CSS/Home.css'
 import ButtonComp from '../components/Button'
 import AppContext from '../context/AppContext'
 import Card from '../components/Card'
+import Loading from '../components/Loading'
 
 function Home() {
-  const { apiData, api } = useContext(AppContext);
+  const { apiData, api, loading } = useContext(AppContext);
   const { results } = apiData;
 
   return (
@@ -22,6 +23,7 @@ function Home() {
         </section>
         <section className='render-section'>
           {
+            loading ? <Loading /> :
             results?.map((product) => (
               <Card product={ product } api={ api === 'Buscape' ? 'Buscapé' : 'Meli' } />
             ))

@@ -28,7 +28,7 @@ function Card(props) {
       </section>
       <section className="product-button">
           <a  href={ permalink } target='_blank' rel='noreferrer' className="product-link-button">
-            { `Acessar ${api}` }
+            { permalink.includes('buscape') ? 'Go to Buscapé' : 'Go to Meli'  }
           </a>
       </section>
     </div>
