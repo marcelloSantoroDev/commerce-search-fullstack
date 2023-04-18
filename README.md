@@ -6,8 +6,6 @@ O backend é construído em Node.js e usa a biblioteca express para criar um ser
 
 O frontend é construído em React e usa a biblioteca axios para fazer as requisições para o backend. Ele apresenta uma interface simples para que o usuário possa inserir a palavra-chave da pesquisa e ver os resultados da pesquisa.
 
-
-
 ## Instruções para subir a aplicação front-end
 
 1. Abra um terminal na pasta `client` do projeto.
@@ -16,10 +14,12 @@ O frontend é construído em React e usa a biblioteca axios para fazer as requis
 
 ## Instruções para subir o servidor back-end (com Docker)
 
+
 1. Certifique-se de ter o Docker instalado em sua máquina.
 2. Certifique-se de configurar o arquivo .env.example, bem como retirar o .example
-2. Abra um terminal na pasta raiz do projeto.
-3. Execute o comando `docker build -t 'DB_NAME definido no .env' .` para construir a imagem para o MySQL.
-4. Execute o `comando docker-compose up -d .` para subir o container do MySQL.
+3. Abra um terminal na pasta raiz do projeto.
+4. Execute o comando `docker build -t 'DB_NAME definido no .env' .` para construir a imagem para o MySQL.
+5. Execute o `comando docker-compose up -d .` para subir o container do MySQL.
+6. Execute o comando `npm run db` no terminal da sua máquina para criar o banco de dados e a tabela.
 
 

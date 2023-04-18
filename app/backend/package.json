@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch \" ./src/**\"  --ignore \"src/**/*.json\" --exec \"ts-node src/index.js\"",
-    "start": "ts-node src/utils/scraper.js"
+    "db": "npx sequelize-cli db:drop && npx sequelize db:create && npx sequelize db:migrate "
+
   },
   "keywords": [],
   "author": "",
