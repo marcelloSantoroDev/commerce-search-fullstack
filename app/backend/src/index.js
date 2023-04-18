@@ -6,8 +6,6 @@ const scraper = require('./utils/scraper');
 const PORT = 3001;
 
 const server = app.listen(PORT, async () => {
-    await Promise.all([
-    ]);
     console.log(`rodando na porta ${PORT}`);
 });
 
