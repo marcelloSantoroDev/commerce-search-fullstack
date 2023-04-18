@@ -1,6 +1,6 @@
 const app = require('express');
-const searchesRoute = require('./searches.route')
-const buscapeRoute = require('./buscape.route')
+const searchesRoute = require('./searchesRoute')
+const buscapeRoute = require('./buscapeRoute')
 
 const router = app.Router();
 
