@@ -8,7 +8,7 @@ O frontend é construído em React e usa a biblioteca axios para fazer as requis
 
 ## Instruções para subir a aplicação front-end
 
-1. Abra um terminal na pasta `client` do projeto.
+1. Abra um terminal na pasta raiz do projeto.
 2. Execute o comando `npm install` para instalar as dependências do projeto.
 3. Execute o comando `npm start` para iniciar o servidor de desenvolvimento.
 
