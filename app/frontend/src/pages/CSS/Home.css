@@ -1,4 +1,9 @@
+body {
+    background-color: rgba(0, 0, 255, 0.021);
+}
+
 .search-section {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }

@@ -21,8 +21,7 @@ function SelectComp(props) {
         type === "Web" ?
         <>
         <option value="">Web</option>
-        <option value="Todas">Todas</option>
-        <option value="MecadoLivre">MercadoLivre</option>
+        <option value="MecadoLivre">Mercado Livre</option>
         <option value="Buscape">Buscapé</option>
         </>
           :
