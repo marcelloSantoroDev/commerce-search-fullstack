@@ -17,14 +17,14 @@ function ButtonComp(props) {
       setLoading(false)
       setApiData(data);
       console.log(data.results);
-      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
+      await Promise.all(data.results.filter((_e, i) => i < 6).map((card) => saveOnDb(card, 'meli')))
     } else {
       setLoading(true);
       const data = await meliApi(searched);
       setLoading(false);
       setApiData(data);
       setSearched('');      
-      await Promise.all(data.results.map((card) => saveOnDb(card, 'meli')))
+      await Promise.all(data.results.filter((_e, i) => i < 6).map((card) => saveOnDb(card, 'meli')))
     }
   }
 

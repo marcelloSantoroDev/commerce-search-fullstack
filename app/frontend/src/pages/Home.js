@@ -24,7 +24,7 @@ function Home() {
         <section className='render-section'>
           {
             loading ? <Loading /> :
-            results?.map((product) => (
+            results?.filter((_e, i) => i < 6).map((product) => (
               <Card product={ product } />
             ))
           }
