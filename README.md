@@ -1,3 +1,5 @@
+## Em desenvolvimento / In development 
+
 ## Descrição
 
 A aplicação é capaz de pesquisar por produtos na API do Mercado Livre e exibir os resultados para o usuário. Além disso, também faz scraping do site Buscapé para obter informações adicionais sobre os produtos encontrados.
