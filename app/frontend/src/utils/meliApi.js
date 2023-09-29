@@ -1,4 +1,5 @@
 const meliApi = async (query) => {
+    console.log('CAIU NO FETCH');
     const url = `https://api.mercadolibre.com/sites/MLB/search?q=${query}`
     try {
         const request = await fetch(url);

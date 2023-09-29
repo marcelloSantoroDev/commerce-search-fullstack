@@ -4,17 +4,27 @@ const verifySearch = require('../utils/verifySearch');
 
 const createSearch = async (data) => {
     const { title } = data;
-    const verify = await verifySearch(title)
+    const message = await verifySearch(title)
     try {
-        if (!verify) {
+        if (!message) {
             await searches.create(data);
+            return { type: null, message: null };
         }
-        return { type: null, message: 'Created!' }
+        return { type: null, message }
     } catch (error) {
         return { type: error.type, message: error.message }
     }
 }
 
+const getSearches = async () => {
+    try {
+        const data = await searches.findAll();
+        return { type: null, message: data }
+    } catch (error) {
+        return { type: 'ERROR', message: error.message }
+    }
+}
 module.exports = {
-    createSearch
+    createSearch,
+    getSearches,
 }
