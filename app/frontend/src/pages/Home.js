@@ -15,7 +15,7 @@ function Home() {
     <div className='home'>
         <section className='search-section'>
           <div className="selects">
-          <SelectComp type="Web" />
+          {/* <SelectComp type="Web" /> */}
           <SelectComp type="Categories" />
           </div>
           <InputComp />
