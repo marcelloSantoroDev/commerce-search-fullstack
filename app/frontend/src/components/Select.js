@@ -3,35 +3,25 @@ import './CSS/Select.css'
 import AppContext from '../context/AppContext';
 
 function SelectComp(props) {
-  const { type } = props;
-  const { api, setApi, category, setCategory } = useContext(AppContext);
+  const { category, setCategory } = useContext(AppContext);
 
   const handleChange = ({ target }) => {
     const { value } = target;
-    type === 'Web' ? setApi(value) : setCategory(value);
+    setCategory(value);
   }
 
   return (
       <select
-      value={ type === 'Web' ? api : category }
+      value={ category }
       onChange={ handleChange }
       className='select'
       >
-        {
-        type === "Web" ?
-        <>
-        <option value="">Web</option>
-        <option value="MecadoLivre">Mercado Livre</option>
-        <option value="Buscape">Buscapé</option>
-        </>
-          :
-        <>
+      <>
         <option value="">Categories</option>
         <option value="geladeira">Geladeira</option>
         <option value="tv">TV</option>
         <option value="celular">Celular</option>
-        </>
-        }
+      </>
       </select>
   )
 }

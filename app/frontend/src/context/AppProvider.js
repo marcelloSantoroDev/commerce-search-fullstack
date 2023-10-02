@@ -4,7 +4,6 @@ import AppContext from './AppContext';
 function AppProvider ({ children }){
     const [api, setApi] = useState('');
     const [category, setCategory] = useState('');
-    const [searched, setSearched] = useState('');
     const [apiData, setApiData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [cache, setCache] = useState([]);
@@ -14,15 +13,13 @@ function AppProvider ({ children }){
         setApi,
         category,
         setCategory,
-        searched,
-        setSearched,
         apiData,
         setApiData,
         loading,
         setLoading,
         cache,
         setCache
-    }), [api, category, searched, apiData, loading, cache]);
+    }), [api, category, apiData, loading, cache]);
 
     return (
         <AppContext.Provider value={ values }>
