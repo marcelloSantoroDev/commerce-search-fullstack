@@ -1,5 +1,4 @@
 const app = require('./app');
-const scraper = require('./utils/scraper');
 
 const PORT = 3001;
 
