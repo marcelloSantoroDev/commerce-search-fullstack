@@ -4,16 +4,13 @@ import Button from '@mui/material/Button';
 import AppContext from '../context/AppContext';
 import meliApi from '../utils/meliApi';
 import saveOnDb from '../utils/saveOnDb';
-import fetchOnDB from '../utils/fetchOnDB';
 
 function ButtonComp(props) {
   const { type } = props;
   const { category, setApiData, setLoading } = useContext(AppContext);
   
 
-  const handleMeliClick = async () => {
-      const test = await fetchOnDB();
-      console.log(test);
+  const handleFetchClick = async () => {
       setLoading(true)
       const data = await meliApi(category);
       setLoading(false)
@@ -24,9 +21,9 @@ function ButtonComp(props) {
 
   return (
       <Stack spacing={2} direction="row" alignSelf={'center'} minHeight={55.4}>
-        <Button variant="contained" onClick={ handleMeliClick }>{ type }</Button>
+        <Button variant="contained" onClick={ handleFetchClick }>{ type }</Button>
       </Stack>
   )
 }
 
-export default ButtonComp
+export default ButtonComp;

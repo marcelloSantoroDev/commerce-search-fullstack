@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import SelectComp from '../components/Select'
 import './CSS/Home.css'
 import ButtonComp from '../components/Button'
@@ -7,8 +7,8 @@ import Card from '../components/Card'
 import Loading from '../components/Loading'
 
 function Home() {
-  const { apiData, loading } = useContext(AppContext);
-  const { results } = apiData;
+  const { apiData, loading, dbData } = useContext(AppContext);
+
 
   return (
     <div className='home'>
@@ -19,12 +19,21 @@ function Home() {
           <ButtonComp type="Search" />
         </section>
         <section className='render-section'>
-          {
-            loading ? <Loading /> :
-            results?.filter((_e, i) => i < 6).map((product) => (
-              <Card product={ product } />
+        {loading ? (
+          <Loading />
+        ) : (
+          dbData.length > 0 ? (
+            // Se dbData tem dados, renderize com base nele
+            dbData.filter((_e, i) => i < 6).map(product => (
+              <Card key={product.id} product={product} />
             ))
-          }
+          ) : (
+            // Se dbData está vazio, renderize com base nos dados da API
+            apiData.results?.filter((_e, i) => i < 6).map(product => (
+              <Card key={product.id} product={product} />
+            ))
+          )
+        )}
         </section>
     </div>
   )

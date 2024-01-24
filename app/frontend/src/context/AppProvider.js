@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import AppContext from './AppContext';
+import fetchOnDB from '../utils/fetchOnDB';
 
 function AppProvider ({ children }){
     const [api, setApi] = useState('');
@@ -7,6 +8,27 @@ function AppProvider ({ children }){
     const [apiData, setApiData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [cache, setCache] = useState([]);
+    const [dbData, setDbData] = useState([]);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const request = await fetchOnDB();
+                setDbData(request);
+                console.log("REQUEST: ",request);
+            } catch (error) {
+                // Trate erros, se houver
+            }
+        };
+
+        fetchData(); 
+    }, [])
+
+    useEffect(() => {
+        console.log("DB DATA (useEffect): ", dbData);
+    }, [dbData]);
+
 
     const values = useMemo(() => ({
         api,
@@ -18,8 +40,10 @@ function AppProvider ({ children }){
         loading,
         setLoading,
         cache,
-        setCache
-    }), [api, category, apiData, loading, cache]);
+        setCache,
+        dbData,
+        setDbData
+    }), [api, category, apiData, loading, cache, dbData]);
 
     return (
         <AppContext.Provider value={ values }>

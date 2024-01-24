@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import './CSS/Select.css'
 import AppContext from '../context/AppContext';
 
-function SelectComp(props) {
-  const { category, setCategory } = useContext(AppContext);
 
-  const handleChange = ({ target }) => {
+function SelectComp(props) {
+  const { category, setCategory} = useContext(AppContext);
+
+  const handleChange = async ({ target }) => {
     const { value } = target;
     setCategory(value);
   }
