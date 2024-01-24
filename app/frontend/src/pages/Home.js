@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import SelectComp from '../components/Select'
 import './CSS/Home.css'
 import ButtonComp from '../components/Button'
