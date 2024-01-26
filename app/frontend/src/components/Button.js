@@ -29,7 +29,7 @@ function ButtonComp(props) {
 
   return (
       <Stack spacing={2} direction="row" alignSelf={'center'} minHeight={40.4}>
-        <Button variant="contained" onClick={ type === 'Search' ? handleFetchClick : handleDbFetchClick }>{ type }</Button>
+      <Button variant="contained" onClick={() => type === 'Search' ? handleFetchClick() : handleDbFetchClick()}>{ type }</Button>
       </Stack>
   )
 }
