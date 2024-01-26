@@ -8,7 +8,7 @@ import Loading from '../components/Loading'
 import { Link } from 'react-router-dom'
 
 function Home() {
-  const { apiData, loading } = useContext(AppContext);
+  const { loading, dbData } = useContext(AppContext);
 
 
   return (
@@ -26,7 +26,7 @@ function Home() {
         {loading ?
           <Loading />
           :
-          apiData.results?.filter((_e, i) => i < 6).map(product => (
+          dbData?.filter((_e, i) => i < 6).map(product => (
             <Card key={product.id} product={product} />
           )
           )}
