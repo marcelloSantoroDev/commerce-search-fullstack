@@ -11,6 +11,8 @@ function AppProvider ({ children }){
     const [dbData, setDbData] = useState([]);
 
 
+
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -42,7 +44,7 @@ function AppProvider ({ children }){
         cache,
         setCache,
         dbData,
-        setDbData
+        setDbData,
     }), [api, category, apiData, loading, cache, dbData]);
 
     return (

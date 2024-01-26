@@ -13,7 +13,7 @@ function Home() {
 
   useEffect(() => {
     if (location.pathname === '/searches') {
-      setDbData([])
+      setDbData([]);
     }
   }, [location, setDbData])
 
@@ -29,9 +29,7 @@ function Home() {
         </Link>
       </section>
       <section className='render-section'>
-        {dbData.length === 0 ?
-          <h1>You still didn't search for these products</h1>
-          :
+        {
           dbData?.filter((_e, i) => i < 6).map(product => (
             <Card key={product.id} product={product} />
           )

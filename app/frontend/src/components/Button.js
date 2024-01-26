@@ -8,7 +8,7 @@ import fetchOnDB from '../utils/fetchOnDB';
 
 function ButtonComp(props) {
   const { type } = props;
-  const { category, setApiData, setLoading, setDbData, setCategory, setDbDataBool } = useContext(AppContext);
+  const { category, setApiData, setLoading, setDbData, setCategory} = useContext(AppContext);
   
 
   const handleFetchClick = async () => {
@@ -24,8 +24,6 @@ function ButtonComp(props) {
     setLoading(true)
     const data = await fetchOnDB();
     const dbDataCategory = data.filter((card) => card.category === category);
-    const checkData = dbDataCategory.length > 0;
-    setDbDataBool(checkData);
     setDbData(dbDataCategory);
     setLoading(false);
     setCategory("");
