@@ -4,11 +4,10 @@ import './CSS/Home.css'
 import ButtonComp from '../components/Button'
 import AppContext from '../context/AppContext'
 import Card from '../components/Card'
-import Loading from '../components/Loading'
 import { Link } from 'react-router-dom'
 
 function Home() {
-  const { loading, dbData } = useContext(AppContext);
+  const { dbData } = useContext(AppContext);
 
 
   return (
@@ -23,8 +22,8 @@ function Home() {
         </Link>
       </section>
       <section className='render-section'>
-        {loading ?
-          <Loading />
+        {dbData.length === 0 ?
+          <h1>You still didn't search for these products</h1>
           :
           dbData?.filter((_e, i) => i < 6).map(product => (
             <Card key={product.id} product={product} />
