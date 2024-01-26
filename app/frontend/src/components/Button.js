@@ -10,8 +10,6 @@ function ButtonComp(props) {
   const { category, setApiData, setLoading } = useContext(AppContext);
   
 
-  
-
   const handleFetchClick = async () => {
       setLoading(true)
       const data = await meliApi(category);
