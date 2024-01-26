@@ -3,7 +3,14 @@ body {
 }
 
 .search-section {
+    margin-top: 1%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 1%;
+}
+
+.go-to {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
 }

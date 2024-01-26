@@ -5,6 +5,7 @@ import ButtonComp from '../components/Button'
 import AppContext from '../context/AppContext'
 import Card from '../components/Card'
 import Loading from '../components/Loading'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const { apiData, loading } = useContext(AppContext);
@@ -14,9 +15,12 @@ function Home() {
     <div className='home'>
       <section className='search-section'>
         <div className="selects">
-          <SelectComp type="Categories" />
+        <SelectComp type="Categories" />
         </div>
         <ButtonComp type="Search" />
+        <Link className="go-to" to="/searches">
+          Go to your searches
+        </Link>
       </section>
       <section className='render-section'>
         {loading ?

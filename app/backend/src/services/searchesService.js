@@ -16,14 +16,15 @@ const createSearch = async (data) => {
     }
 }
 
-// const getSearches = async () => {
-//     try {
-//         const data = await searches.findAll();
-//         return { type: null, message: data }
-//     } catch (error) {
-//         return { type: 'ERROR', message: error.message }
-//     }
-// }
+const getSearches = async () => {
+    try {
+        const data = await searches.findAll();
+        return { type: null, message: data }
+    } catch (error) {
+        return { type: 'ERROR', message: error.message }
+    }
+}
+
 module.exports = {
     createSearch,
     getSearches,
