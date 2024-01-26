@@ -1,14 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import SelectComp from '../components/Select'
 import './CSS/Home.css'
 import ButtonComp from '../components/Button'
 import AppContext from '../context/AppContext'
 import Card from '../components/Card'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
 
 function Home() {
-  const { dbData } = useContext(AppContext);
+  const { dbData, setDbData } = useContext(AppContext);
+  const location = useLocation();
 
+  useEffect(() => {
+    if (location.pathname === '/searches') {
+      setDbData([])
+    }
+  }, [location, setDbData])
 
   return (
     <div className='home'>

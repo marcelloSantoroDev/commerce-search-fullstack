@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import SelectComp from '../components/Select'
 import './CSS/Home.css'
 import ButtonComp from '../components/Button'
@@ -6,9 +6,17 @@ import AppContext from '../context/AppContext'
 import Card from '../components/Card'
 import Loading from '../components/Loading'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
 
 function Home() {
-  const { apiData, loading } = useContext(AppContext);
+  const { setApiData, apiData, loading } = useContext(AppContext);
+  const location = useLocation()
+
+  useEffect(() => {
+    if(location.pathname === '/') {
+      setApiData({results: []})
+    }
+  },[location, setApiData])
 
 
   return (
