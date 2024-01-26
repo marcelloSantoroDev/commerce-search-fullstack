@@ -11,6 +11,7 @@ const verifySearch = async (title) => {
         return searched;
     } catch (error) {
         console.log(error.message);
+        return null;
     }
 }
 
