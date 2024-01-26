@@ -6,8 +6,8 @@ O backend é construído em Node.js e usa a biblioteca express para criar um ser
 
 O frontend é construído em React.js, com uma interface simples para que o usuário possa selecionar a palavra-chave da pesquisa e ver os resultados da pesquisa. A aplicação conta com dois endpoints:
 
-`'/'` é onde as pesquisas são feitas a partir das requisições para a API do Mercado Livre
-`'/searches'` é onde as pesquisas já em cache são renderizadas a partir do back-end da aplicação
+- `'/'` é onde as pesquisas são feitas a partir das requisições para a API do Mercado Livre
+- `'/searches'` é onde as pesquisas já em cache são renderizadas a partir do back-end da aplicação
 
 ## Instruções para subir a aplicação front-end
 
@@ -26,7 +26,7 @@ O frontend é construído em React.js, com uma interface simples para que o usu�
 6. Execute o comando `docker-compose up -d` para subir o container do MySQL.
 7. Execute o comando `npm run db` no terminal da sua máquina para criar o banco de dados e a tabela.
 
-##Description
+## Description
 
 The application is capable of searching for products in the Mercado Livre API and displaying the results to the user.
 
@@ -34,15 +34,15 @@ The backend is built in Node.js and uses the Express library to create a web ser
 
 The frontend is built in React.js, with a simple interface for the user to select the search keyword and view the search results. The application has two endpoints:
 
-`'/'` is where searches are made based on requests to the Mercado Livre API.
-`'/searches'` is where cached searches are rendered from the application's backend.
+- `'/'` is where searches are made based on requests to the Mercado Livre API.
+- `'/searches'` is where cached searches are rendered from the application's backend.
 
 ## Instructions to run the frontend application
 
 1. Open a terminal in the /app/frontend folder of the project.
 2. Execute the command npm install to install project dependencies.
 3. Execute the command npm start to start the development server.
-4. 
+
 ## Instructions to run the backend server (with Docker)
 
 1. Ensure you have Docker installed on your machine.
